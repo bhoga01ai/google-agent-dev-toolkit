@@ -23,11 +23,13 @@ vertexai.init(
 
 # Create Agent Engine APP
 
-adk_app = AdkApp(agent=root_agent, enable_tracing=True)
+adk_app = AdkApp(agent=root_agent,
+                  enable_tracing=True
+                )
 
-remote_agent = agent_engines.create(
+my_remote_agent = agent_engines.create(
     adk_app,
-    display_name=root_agent.name,
+    display_name="my_teaching_assistant_agent",
     requirements=[
         "google-adk>=1.0.0",
         "google-cloud-aiplatform[agent_engines]",
@@ -36,4 +38,4 @@ remote_agent = agent_engines.create(
         "absl-py"
     ]
 )
-print(f"Created remote agent: {remote_agent.resource_name}")
+print(f"Created remote agent: {my_remote_agent.resource_name}")

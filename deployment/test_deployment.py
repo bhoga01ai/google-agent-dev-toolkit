@@ -18,7 +18,7 @@ vertexai.init(
 )
 
 # Create remote Agent Engine APP
-remote_agent = vertexai.agent_engines.get('projects/278955585844/locations/us-central1/reasoningEngines/8604342592370376704')
+remote_agent = vertexai.agent_engines.get('projects/278955585844/locations/us-central1/reasoningEngines/8184764557164544')
 print(f"Found agent with resource ID: {remote_agent.resource_name}")
 user_id = "123"
 session = remote_agent.create_session(user_id=user_id)   

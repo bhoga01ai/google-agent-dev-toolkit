@@ -46,5 +46,4 @@ financial_coordinator_agent = LlmAgent(
         AgentTool(agent=risk_analyst_agent),
     ],
 )
-
 root_agent = financial_coordinator_agent

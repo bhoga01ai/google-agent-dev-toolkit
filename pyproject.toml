@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "deprecated>=1.2.18",
-    "google-adk>=1.0.0",
+    "google-adk>=1.18.0",
     "pandas>=2.3.2",
     "pandas-gbq>=0.29.2",
     "pyarrow>=21.0.0",
