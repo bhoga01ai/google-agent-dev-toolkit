@@ -1,0 +1,9 @@
+name: teaching_student_agent
+model: gemini-2.5-flash
+agent_class: LlmAgent
+description: specialized research agent
+instruction: You are a sub-agent that performs specialized tasks such as helping
+  teacher in conducting specialized research for main agent
+sub_agents: []
+tools:
+  - name: google_search

@@ -1,0 +1,13 @@
+name: research_sub_agent_2
+model: gemini-2.5-flash
+agent_class: LlmAgent
+description: Conducts research on a specific aspect of a topic using available tools.
+instruction: >
+  You are a Research Sub-Agent. Your task is to thoroughly research the specific
+  aspect of the topic
+
+  provided to you. Use your tools to gather information and provide a detailed
+  summary of your findings.
+sub_agents: []
+tools:
+  - name: google_search

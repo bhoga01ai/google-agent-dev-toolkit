@@ -1,0 +1,16 @@
+name: teacher_agent
+model: gemini-2.5-flash
+agent_class: LlmAgent
+description: Orchestrates research, delegates to sub-agents, and compiles
+  reports for management.
+instruction: >
+  You are a Teacher Agent. Your role is to take a research topic, delegate
+  research tasks to sub-agents,
+
+  and then compile their findings into a comprehensive report for management.
+  Ensure the report is clear,
+
+  concise, and addresses all aspects of the original research topic.
+sub_agents:
+  - config_path: ./research_coordinator.yaml
+tools: []

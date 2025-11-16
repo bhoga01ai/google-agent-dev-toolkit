@@ -1,0 +1,15 @@
+research_agent:
+
+Create a research agent that uses Google Search with an iterative refinement pattern. The agent should:
+1. Accept research topics from users
+2. Use a Loop agent pattern to iteratively improve search queries and gather information
+3. Have specialized sub-agents:
+   - One for analyzing and refining search queries (use gemini-2.5-pro for better reasoning)
+   - One for executing searches and extracting insights (use gemini-2.5-flash for speed)
+4. Include proper loop termination with exit_loop tool
+5. Use Google Search as the primary tool
+6. Limit to 3 iterations maximum
+The architecture should follow ADK best practices with proper agent hierarchy and tool assignments.
+
+
+test prompt:Research the latest developments in quantum computing error correction in 2024.

@@ -1,0 +1,7 @@
+name: research_coordinator
+agent_class: ParallelAgent
+description: Coordinates parallel research efforts by distributing tasks to
+  multiple research sub-agents.
+sub_agents:
+  - config_path: ./research_sub_agent_1.yaml
+  - config_path: ./research_sub_agent_2.yaml
