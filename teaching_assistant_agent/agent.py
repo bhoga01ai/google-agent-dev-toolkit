@@ -10,12 +10,25 @@
 # STEP 4. Run the agent using adk web tool (for development)
 # STEP 5. Deploy the agent using Vertex Agent Engine (for production)
 
+#!adk deploy agent_engine --project=myproject-454701 --region=us-central1 teaching_assistant_agent --agent_engine_config_file=teaching_assistant_agent/.agent_engine_config.json
+
 from dotenv import load_dotenv
 load_dotenv()
 from . import prompt
 
 from google.adk import Agent
 from google.adk.tools import google_search
+
+import os
+from dotenv import load_dotenv
+load_dotenv()
+import vertexai
+
+vertexai.init(
+    project=os.environ["GOOGLE_CLOUD_PROJECT"],
+    location=os.environ["GOOGLE_CLOUD_LOCATION"],staging_bucket=os.getenv("GOOGLE_CLOUD_STORAGE_BUCKET")
+)
+
 # from google.adk.tools import FunctionTool
 
 # def get_weather(location: str) -> str:
@@ -26,13 +39,14 @@ from google.adk.tools import google_search
 #     """Get the current time"""
 #     return "10:00 AM"
 
-MODEL="gemini-2.0-flash"
+
+MODEL="gemini-2.5-flash"
 
 root_agent=Agent(
     model=MODEL,
-    name="teaching_assistant_agent",
+    name="teaching_assistant_agent_model_2_5",
     instruction=prompt.TEACHING_ASSISTANT_PROMPT,
-    # tools=[FunctionTool(get_weather), FunctionTool(get_current_time)],
+    # tools=[FunctionTool(get_weather), FunctionTool(get_current_time)],    
     tools=[google_search],
     description="Agent to assist students to plan and learn any skills that they want to learn. "   # purpose of the agent
 )
